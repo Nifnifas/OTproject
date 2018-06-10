@@ -20,7 +20,7 @@ class teams {
 		$this->komandos_lentele = config::DB_PREFIX . 'komanda';
         }
                 
-        public function getTeamList($limit, $offset) {
+        public function getTeamList() {
 		$query = "  SELECT *
 					FROM {$this->komandos_lentele}";
                 $data = mysql::select($query);

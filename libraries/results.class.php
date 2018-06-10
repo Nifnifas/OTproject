@@ -52,4 +52,22 @@ class results {
 		
 		return $data[0];
         }
+        
+        public function insertResult($data) {
+		$query = "  INSERT INTO `{$this->rezultatu_lentele}`
+								(
+									`fk_kom1_id`,
+									`kom1_iv`,
+									`fk_kom2_id`,
+									`kom2_iv`
+								)
+								VALUES
+								(
+									'{$data['fk_kom1_id']}',
+									'{$data['kom1_iv']}',
+									'{$data['fk_kom2_id']}',
+									'{$data['kom2_iv']}'
+								)";
+		mysql::query($query);
+	}
 }
