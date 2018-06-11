@@ -14,6 +14,15 @@ $elementCount = $tableObj->getTableListCount();
 // suformuojame sąrašo puslapius
 $paging->process($elementCount, $pageId);
 
+$tableObj->updateP();
+$tableObj->updateW();
+$tableObj->updateD();
+$tableObj->updateL();
+$tableObj->updatePts();
+$tableObj->updateImusta();
+$tableObj->updatePraleista();
+$tableObj->updateSkirtumas();
+
 // išrenkame nurodyto puslapio sutartis
 $data = $tableObj->getTableList($paging->size, $paging->first);
 
