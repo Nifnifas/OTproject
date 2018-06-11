@@ -6,23 +6,25 @@
 
 <table class="listTable">
 	<tr>
-		<th>ID</th>
-                <th>Komanda</th>
+		<th>Pos</th>
+                <th>Team</th>
 		<th>P</th>
                 <th>W</th>
                 <th>D</th>
                 <th>L</th>
                 <th>+/-</th>
-                <th>S</th>
+                <th>Diff</th>
                 <th>Pts</th>
 		<th></th>
 	</tr>
 	<?php
 		// suformuojame lentelę
+                $i = 0;
 		foreach($data as $key => $val) {
+                    $i++;
 			echo
 				"<tr>"
-					. "<td>{$val['id_SUVESTINE']}</td>"
+					. "<td>{$i}</td>"
                                         . "<td>{$val['komanda']}</td>"
 					. "<td>{$val['zaista']}</td>"
                                         . "<td>{$val['laimejo']}</td>"

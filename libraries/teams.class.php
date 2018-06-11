@@ -15,15 +15,32 @@
 class teams {
 
 	private $komandos_lentele = '';
+        private $busenu_lentele = '';
 	
 	public function __construct() {
 		$this->komandos_lentele = config::DB_PREFIX . 'komanda';
+                $this->busenu_lentele = config::DB_PREFIX . 'busena';
         }
                 
-        public function getTeamList() {
+        public function getList() {
 		$query = "  SELECT *
 					FROM {$this->komandos_lentele}";
                 $data = mysql::select($query);
+		
+		return $data;
+	}
+        
+        public function getTeamList($limit, $offset) {
+		$query = "  SELECT `{$this->komandos_lentele}`.`kom_id`,
+						   `{$this->komandos_lentele}`.`pavadinimas`,
+						   `{$this->komandos_lentele}`.`salis`,
+                                                   `{$this->komandos_lentele}`.`stadionas`, 
+                                                   `{$this->busenu_lentele}`.`name`
+					FROM `{$this->komandos_lentele}`
+						LEFT JOIN `{$this->busenu_lentele}`
+							ON `{$this->komandos_lentele}`.`busena`=`{$this->busenu_lentele}`.`id` LIMIT {$limit} OFFSET {$offset}";
+                $data = mysql::select($query);
+		
 		return $data;
 	}
         

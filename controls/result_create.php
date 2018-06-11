@@ -9,6 +9,12 @@ $teamObj = new teams();
 include 'libraries/tournament_table.class.php';
 $tableObj = new tournament_table();
 
+include 'libraries/players.class.php';
+$playerObj = new players();
+
+include 'libraries/player_statistics.class.php';
+$statObj = new player_statistics();
+
 $formErrors = null;
 $data = array();
 
@@ -41,12 +47,7 @@ if(!empty($_POST['submit'])) {
 		// įrašome naują įrašą
 		$resultObj->insertResult($dataPrepared);
                 
-                
-                
-                //cia turetu buti update turnyrines lenteles
-                $tableObj->updateP();
-                
-
+                $statObj->updateStat($dataPrepared);
 		// nukreipiame į markių puslapį
 		header("Location: index.php?module={$module}&action=list");
 		die();

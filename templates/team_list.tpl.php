@@ -22,7 +22,7 @@
 					. "<td>{$val['pavadinimas']}</td>"
                                         . "<td>{$val['salis']}</td>"
                                         . "<td>{$val['stadionas']}</td>"
-                                        . "<td>{$val['busena']}</td>"
+                                        . "<td>{$val['name']}</td>"
 					. "</td>"
 				. "</tr>";
 		}

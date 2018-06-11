@@ -30,7 +30,8 @@ class results {
                                                    s.data
 					FROM rungtynes as s
 						LEFT OUTER JOIN komanda as t1 ON s.fk_kom1_id=t1.kom_id
-                                                LEFT OUTER JOIN komanda as t2 ON s.fk_kom2_id=t2.kom_id";
+                                                LEFT OUTER JOIN komanda as t2 ON s.fk_kom2_id=t2.kom_id
+                                                ORDER BY s.data DESC";
                 $data = mysql::select($query);
 		
 		return $data;

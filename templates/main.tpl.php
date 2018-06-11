@@ -21,6 +21,8 @@
 						<li><a href="index.php?module=team&action=list" title="Komandos"<?php if($module == 'team') { echo 'class="active"'; } ?>>Komandos</a></li>
                                                 <li><a href="index.php?module=table&action=list" title="Turnyrinė Lentelė"<?php if($module == 'table') { echo 'class="active"'; } ?>>Turnyrinė lentelė</a></li>
                                                 <li><a href="index.php?module=result&action=list" title="Rezultatai"<?php if($module == 'result') { echo 'class="active"'; } ?>>Rezultatai</a></li>
+                                                <li><a href="index.php?module=player&action=list" title="Zaidejai"<?php if($module == 'player') { echo 'class="active"'; } ?>>Zaidejai</a></li>
+                                                <li><a href="index.php?module=statistic&action=list" title="Statistika"<?php if($module == 'statistic') { echo 'class="active"'; } ?>>Statistika</a></li>
 					</ul>
 				</div>
 				<div id="contentMain">
